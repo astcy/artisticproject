@@ -141,7 +141,6 @@ const App = () => {
           <Design12/>
           <Support/>
           <Design11/>
-          <ReadMore/>
           <Collaborate/>
           <Footer/>
           </main>
