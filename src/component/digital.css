@@ -1,0 +1,357 @@
+.digital-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 1000px;
+  /* background: none;  Remove any background here to use App.jsx background */
+  padding: 60zpx 0 0 0;
+  gap: 0;
+  position: relative;
+  background: none;
+}
+
+.digital-left {
+  flex: 1.1;
+  padding-left: 60px;
+  padding-right: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.digital-badge {
+  color: #b0ff2a;
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.digital-star {
+  font-size: 1.3rem;
+  margin-right: 4px;
+}
+
+.digital-title {
+  color: #fff;
+  font-size: 3.3rem;
+  font-weight: 600;
+  margin: 0 0 40px 0;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.digital-highlight {
+  color: #b0ff2a;
+  font-weight: 700;
+}
+
+.digital-card-group {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.digital-card {
+  background: rgba(16, 24, 8, 0.7);
+  border: 1.5px solid rgba(176, 255, 42, 0.13);
+  border-radius: 18px;
+  padding: 32px 30px 22px 30px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 18px 0 rgba(0,0,0,0.12);
+  max-width: 540px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card hover effect: very light white animated overlay */
+.digital-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.08);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.digital-card:hover {
+  box-shadow: 0 6px 32px 0 rgba(255,255,255,0.08), 0 2px 18px 0 rgba(0,0,0,0.18);
+  transform: translateY(-4px) scale(1.015);
+}
+.digital-card:hover::after {
+  opacity: 1;
+  animation: digitalCardShine 0.9s linear;
+}
+
+@keyframes digitalCardShine {
+  0% { opacity: 0.08; }
+  50% { opacity: 0.16; }
+  100% { opacity: 0.08; }
+}
+
+.digital-card-title {
+  color: #fff;
+  font-size: 1.32rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.digital-card-desc {
+  color: #e0e0e0;
+  font-size: 1.09rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.digital-right {
+  flex: 1;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-width: 520px;
+  max-width: 900px;
+  margin-top: 4%;
+  gap: 60px;
+}
+
+.digital-right-desc {
+  color: #fff;
+  font-size: 1.16rem;
+  font-weight: 400;
+  margin-bottom: 28px;
+  text-align: left;
+  max-width: 580px;
+}
+
+.digital-image-bg {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
+  background: #181d13;
+  position: relative;
+}
+
+/* Image hover effect: very light white animated overlay */
+.digital-image-bg:hover .digital-image {
+  filter: brightness(1.08) blur(0.5px);
+  transition: filter 0.3s;
+}
+.digital-image-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.10);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.digital-image-bg:hover::after {
+  opacity: 1;
+  animation: digitalImageShine 0.9s linear;
+}
+@keyframes digitalImageShine {
+  0% { opacity: 0.10; }
+  50% { opacity: 0.18; }
+  100% { opacity: 0.10; }
+}
+
+.digital-image {
+  width: 100%;
+  display: block;
+  border-radius: 28px;
+  object-fit: cover;
+  min-height: 650px;
+  max-height: 420px;
+  transition: filter 0.3s;
+}
+
+@media (max-width: 1100px) {
+  .digital-section {
+    flex-direction: column;
+    padding: 40px 0 0 0;
+  }
+  .digital-left, .digital-right {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .digital-right {
+    align-items: flex-start;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .digital-title {
+    font-size: 2rem;
+  }
+  .digital-card {
+    padding: 18px 10px 14px 10px;
+  }
+  .digital-right-desc {
+    font-size: 1rem;
+  }
+  .digital-image-bg {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .digital-right {
+    min-width: 340px;
+    max-width: 700px;
+  }
+  .digital-image-bg {
+    max-width: 700px;
+  }
+}
+
+/* Tablets and below */
+@media (max-width: 1100px) {
+  .digital-section {
+    flex-direction: column;
+    padding: 40px 0 0 0;
+    min-height: 0;
+  }
+  .digital-left, .digital-right {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .digital-right {
+    align-items: flex-start;
+    margin-top: 32px;
+    min-width: 0;
+    max-width: 100%;
+    gap: 32px;
+  }
+  .digital-image-bg {
+    max-width: 100%;
+  }
+}
+
+/* Phones and small tablets */
+@media (max-width: 700px) {
+  .digital-section {
+    padding: 18px 0 0 0;
+    min-height: 0;
+  }
+  .digital-left,
+  .digital-right {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .digital-title {
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+  }
+  .digital-badge {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  .digital-card-group {
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .digital-card {
+    padding: 12px 6px 10px 6px;
+    border-radius: 11px;
+    max-width: 100%;
+  }
+  .digital-card-title {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+  .digital-card-desc {
+    font-size: 0.95rem;
+  }
+  .digital-right-desc {
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+  }
+  .digital-image-bg {
+    border-radius: 14px;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.18);
+    max-width: 100%;
+  }
+  .digital-image {
+    border-radius: 14px;
+    min-height: 120px;
+    max-height: 180px;
+  }
+   .digital-image-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .slider-btn {
+    background: #b0ff2a;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .digital-image-bg {
+    width: 90vw;
+    max-width: 95vw;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .digital-image {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    max-height: 60vw;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+}
+
+/* Extra small phones */
+@media (max-width: 500px) {
+  .digital-left,
+  .digital-right {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .digital-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  .digital-badge {
+    font-size: 0.82rem;
+  }
+  .digital-card-title {
+    font-size: 0.92rem;
+  }
+  .digital-card-desc {
+    font-size: 0.88rem;
+  }
+  .digital-right-desc {
+    font-size: 0.88rem;
+  }
+  .digital-image-bg {
+    border-radius: 7px;
+  }
+  .digital-image {
+    border-radius: 7px;
+    min-height: 80px;
+    max-height: 120px;
+  }
+}

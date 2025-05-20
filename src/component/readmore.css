@@ -1,0 +1,208 @@
+/* Background gradient and padding */
+.readmore-bg {
+  min-height: 100vh;
+  padding: 2.5rem 1rem 0 1rem;
+  position: relative;
+  margin-top: 30px;
+    margin-bottom: -8rem; /* Added bottom margin for separation from next section */
+
+}
+
+/* Row of cards */
+.readmore-row {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Card styles */
+.readmore-card {
+  background: transparent;
+  border-radius: 2rem;
+  overflow: visible;
+  width: 420px;
+  min-width: 300px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+}
+
+/* Image wrapper: square, rounded, no shadow */
+.readmore-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 24px;
+  position: relative;
+}
+
+/* Card image: fill, rounded, transition for zoom and light */
+.readmore-img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+  transition: transform 0.5s cubic-bezier(.4,1.7,.7,.8), filter 0.5s cubic-bezier(.4,1.7,.7,.8);
+  will-change: transform, filter;
+}
+
+/* White light overlay, hidden by default */
+.readmore-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.10) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(.4,1.7,.7,.8);
+}
+
+/* Zoom and light effect on image hover */
+.readmore-img-wrap:hover .readmore-img {
+  transform: scale(1.11);
+  filter: brightness(1.12);
+}
+
+.readmore-img-wrap:hover::after {
+  opacity: 1;
+}
+
+/* Card content: tight to image, no extra space */
+.readmore-info {
+  padding: 1.5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Title: bold, white, large, tight margin */
+.readmore-title {
+  color: #fff;
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+}
+
+/* Read more link: green, bold, arrow, left-aligned */
+.readmore-link {
+  color: #baff39;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.09rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  transition: color 0.18s;
+  margin-top: 0.2rem;
+}
+
+.readmore-link:hover {
+  color: #eaff8c;
+}
+
+.readmore-arrow {
+  font-size: 1.2em;
+  margin-left: 0.2em;
+}
+
+/* Floating action buttons (FAB) */
+.readmore-fab {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 100;
+  transform: translateY(-50%);
+}
+
+.readmore-fab-btn {
+  background: #fff;
+  border: none;
+  border-radius: 1rem;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.55rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.readmore-fab-btn:hover {
+  background: #baff39;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .readmore-row {
+    gap: 1.5rem;
+  }
+  .readmore-card {
+    width: 340px;
+  }
+}
+
+@media (max-width: 900px) {
+  .readmore-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .readmore-card {
+    width: 95vw;
+    max-width: 420px;
+  }
+  .readmore-fab {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .readmore-bg {
+    padding: 1rem 0.2rem 0 0.2rem;
+  }
+  .readmore-card {
+    border-radius: 1.2rem;
+    width: 100%;
+    min-width: unset;
+  }
+  .readmore-img-wrap {
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+  }
+  .readmore-img {
+    border-radius: 18px;
+  }
+  .readmore-info {
+    padding: 1rem 0 0 0;
+  }
+  .readmore-title {
+    font-size: 1.08rem;
+    margin-bottom: 0.8rem;
+  }
+  .readmore-fab {
+    right: 0.5rem;
+  }
+  .readmore-fab-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    border-radius: 0.7rem;
+  }
+}

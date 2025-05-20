@@ -1,0 +1,225 @@
+.design2-root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.design2-root.features-section {
+  width: 100vw;
+  min-height: 260px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+.design2-root .features-content {
+  display: flex;
+  flex: 1;
+  padding: 2px 0 20px 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.design2-root .features-left {
+  flex: 1.2;
+}
+
+.design2-root .features-label {
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.design2-root .features-asterisk {
+  color: #B6FF5B;
+  font-size: 3em;
+  margin-right: 8px;
+  font-weight: bold;
+  margin-bottom: -17px;
+}
+
+.design2-root .features-title {
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.design2-root .highlight {
+  color: #B6FF5B;
+  font-weight: 700;
+}
+
+.design2-root .features-right {
+  flex: 1.1;
+  margin-left: 38px;
+  margin-top: 30px;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  align-items: left;
+}
+.design2-root .features-btn:hover + .features-btn-icon {
+  background: #fff;
+  color: black;
+  transform: rotate(45deg) scale(1.12);
+  box-shadow: 0 4px 18px rgba(182,255,91,0.18);
+}
+
+
+.design2-root .features-desc {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 28px;
+  margin-top: 0;
+  max-width: 550px;
+}
+
+.design2-root .features-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.design2-root .features-btn {
+  background: #232323;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  padding: 14px 36px;
+  margin-right: -16px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+}
+
+.design2-root .features-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #B6FF5B;
+  color: #181818;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.8rem;
+  margin-left: 12px;
+  box-shadow: 0 2px 8px rgba(182,255,91,0.08);
+  transition:
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
+  cursor: pointer;
+}
+.design2-root .features-btn-icon:hover {
+  background: #fff;
+  color: black;
+  transform: rotate(45deg) scale(1.12);
+  box-shadow: 0 4px 18px rgba(182,255,91,0.18);
+}
+
+@media (max-width: 900px) {
+  .design2-root .features-content {
+    flex-direction: column;
+    padding: 36px 0 36px 12px;
+  }
+  .design2-root .features-left,
+  .design2-root .features-right {
+    margin-left: 0;
+    margin-top: 0;
+    max-width: 100%;
+  }
+  .design2-root .features-title {
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 900px) {
+  .design2-root.features-section {
+    flex-direction: column;
+    min-height: unset;
+    padding-bottom: 24px;
+  }
+  .design2-root .features-content {
+    flex-direction: column;
+    padding: 32px 0 32px 8px;
+    gap: 18px;
+  }
+  .design2-root .features-left,
+  .design2-root .features-right {
+    margin-left: 0;
+    margin-top: 0;
+    max-width: 100%;
+  }
+  .design2-root .features-title {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+  .design2-root .features-desc {
+    font-size: 1.05rem;
+    max-width: 100%;
+  }
+  .design2-root .features-right {
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .design2-root .features-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+  .design2-root .features-btn-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .design2-root.features-section {
+    padding: 0 0 18px 0;
+  }
+  .design2-root .features-content {
+    padding: 18px 0 18px 0;
+    gap: 14px;
+  }
+  .design2-root .features-label {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .design2-root .features-asterisk {
+    font-size: 2.1em;
+    margin-bottom: -10px;
+  }
+  .design2-root .features-title {
+    font-size: 1.3rem;
+    line-height: 1.15;
+  }
+  .design2-root .features-desc {
+    font-size: 0.98rem;
+    margin-bottom: 18px;
+  }
+  .design2-root .features-btn {
+    padding: 10px 18px;
+    font-size: 0.98rem;
+  }
+  .design2-root .features-btn-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    margin-left: 6px;
+  }
+}
